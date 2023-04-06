@@ -64,6 +64,7 @@ export default class ProductManager {
                 console.log(`We can not make an update to the product with ${id} because it does not exist`);
                 return null;
             }
+            //Con estos if valido si ya tiene informacion el producto en esos campos. Si tiene y no se modifica me trae el valor original  del campo pero si tiene nueva informacion hago el update de ese campo. 
             else {
                 const existProduct = products[productIndex];
                 if (updatedProduct.title) {
@@ -85,9 +86,6 @@ export default class ProductManager {
                 console.log(`The product with id ${id} has succefully been modified`)
                 console.log(`The new values for the product with id ${id}`, existProduct)
             }
-
-
-
         } catch (error) {
             console.log(error);
             return null;
